@@ -60,7 +60,7 @@
     </div>
 
     <footer class="main-footer text-center">
-      <strong>User Portal</strong> &copy; {{ date('Y') }}
+      <strong>Student Management Portal</strong> &copy; {{ date('Y') }}
     </footer>
   </div>
 

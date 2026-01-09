@@ -1,3 +1,37 @@
+# Student Management Module (Task Submission)
+This repository contains a Laravel-based Student Management module implemented as part of a technical evaluation task.
+
+## Key Features Implemented
+- Login
+- Default Dashboard
+- Add / Edit / Delete Student using AJAX
+- Auto-generated Admission Number (soft-delete safe)
+- Server-side Result Calculation (PASS / FAIL)
+- jQuery Validation with Bootstrap/AdminLTE styling
+- Sorting with visual indicators (column-based)
+- Pagination with query persistence
+- Soft Deletes
+- CSRF Token Validation
+- User seeder for test users
+
+## Design Decisions & Assumptions
+- Admission numbers are generated using the highest existing ID including soft-deleted records to ensure uniqueness.
+- Result calculation logic is placed in the Student model with const variable PASS_MARK(40),MIN_MARK(0) and MAX_MARK(100) .
+- Sorting fields are whitelisted in the controller to prevent invalid column access.
+- A single reusable form is used for both Add and Edit operations.
+- Validation errors return 422 responses and are handled via AJAX.
+
+
+## Setup Instructions (Quick Start)
+1. Clone the repository
+2. Run `composer install`
+3. Configure `.env`
+4. Run `php artisan migrate`
+5. Run `php artisan db:seed`
+6. Run `php artisan serve`
+
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">

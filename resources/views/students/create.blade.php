@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <h2>Add Student</h2>
+    <h2>{{ isset($student) && !empty($student) ? 'Edit Student' : 'Add Student' }}</h2>
 
     @if ($errors->any())
     <div class="alert alert-danger">
@@ -29,8 +29,8 @@
         <div class="mb-2 row">
             <label for="gender_male" class="col-sm-2 col-form-label">Gender</label>
             <div class="col-sm-4">
-                <input type="radio" name="gender" id="gender_male" value="Male" {{ old('gender', $student->gender ?? '') == 'Male' ? 'checked' : 'checked' }} required> Male
-                <input type="radio" name="gender" id="gender_female" value="Female" {{ old('gender', $student->gender ?? '') == 'Female' ? 'checked' : '' }} required> Female
+                <input type="radio" name="gender" id="gender_male" value="male" {{ old('gender', $student->gender ?? '') == 'male' ? 'checked' : 'checked' }} required> Male
+                <input type="radio" name="gender" id="gender_female" value="female" {{ old('gender', $student->gender ?? '') == 'female' ? 'checked' : '' }} required> Female
             </div>
             <span class="text-danger error-text gender_error"></span>
         </div>
@@ -56,7 +56,7 @@
         </div>
 
         <div class="col-sm-4 text-center mt-4">
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">{{ isset($student) && !empty($student) ? 'Update' : 'Submit' }}</button>
             <button type="button" class="btn btn-warning" onclick="window.location='{{ route('students.index') }}'">Cancel</button>
         </div>
     </form>

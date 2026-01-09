@@ -23,7 +23,7 @@ class StudentCreateRequest extends FormRequest
     {
         $rules = [
             'name' => 'required|string|max:100|min:3',
-            'gender' => 'required|in:Male,Female',
+            'gender' => 'required|in:male,female,Male,Female',
             'age' => 'required|integer|min:5|max:15',
             'mark' => 'required|integer|min:0|max:100',
         ];
